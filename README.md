@@ -104,6 +104,9 @@ player.isAutoPlayAfterInterruption = false // 默认值是 true
 ### 后续功能优化
 
 1. 添加加载超时功能
+2. 支持后台播放
+3. 支持控制栏控制
+
 
 ### 状态转换图
 
