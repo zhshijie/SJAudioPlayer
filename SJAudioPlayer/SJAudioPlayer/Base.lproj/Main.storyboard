@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,77 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SJAudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ahj-YT-EMz">
+                                <rect key="frame" x="27" y="244" width="369" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUE-Ay-5d3">
+                                <rect key="frame" x="29" y="282" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfV-Y6-pbn">
+                                <rect key="frame" x="165.5" y="369" width="92" height="30"/>
+                                <state key="normal" title="播放本地音频"/>
+                                <state key="selected" title="暂停本地音频"/>
+                                <connections>
+                                    <action selector="localAudioPlayOrPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pzs-Wt-dYK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWf-Fd-H4O">
+                                <rect key="frame" x="165.5" y="438" width="92" height="30"/>
+                                <state key="normal" title="播放远程音频"/>
+                                <state key="selected" title="暂停远程音频"/>
+                                <connections>
+                                    <action selector="remoteAudioPlayOrPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Yw-9f-7Ff"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OqK-6S-KW4">
+                                <rect key="frame" x="193" y="305" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ce0-d1-fKw">
+                                <rect key="frame" x="348" y="281" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OqK-6S-KW4" firstAttribute="centerX" secondItem="ahj-YT-EMz" secondAttribute="centerX" id="6aU-mU-u1v"/>
+                            <constraint firstItem="ahj-YT-EMz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="7yz-3d-ZQI"/>
+                            <constraint firstItem="BfV-Y6-pbn" firstAttribute="top" secondItem="OqK-6S-KW4" secondAttribute="bottom" constant="27" id="J0T-rH-Td9"/>
+                            <constraint firstItem="AUE-Ay-5d3" firstAttribute="leading" secondItem="ahj-YT-EMz" secondAttribute="leading" id="Ogl-4w-Lts"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ahj-YT-EMz" secondAttribute="trailing" constant="20" id="XWm-FI-OV4"/>
+                            <constraint firstItem="Ce0-d1-fKw" firstAttribute="trailing" secondItem="ahj-YT-EMz" secondAttribute="trailing" id="Z9D-wv-29Y"/>
+                            <constraint firstItem="HWf-Fd-H4O" firstAttribute="top" secondItem="BfV-Y6-pbn" secondAttribute="bottom" constant="39" id="b6e-Dc-847"/>
+                            <constraint firstItem="ahj-YT-EMz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="fKS-9H-o0f"/>
+                            <constraint firstItem="BfV-Y6-pbn" firstAttribute="centerX" secondItem="OqK-6S-KW4" secondAttribute="centerX" id="fVl-wU-VcQ"/>
+                            <constraint firstItem="Ce0-d1-fKw" firstAttribute="top" secondItem="ahj-YT-EMz" secondAttribute="bottom" constant="7" id="gJ7-wF-LXe"/>
+                            <constraint firstItem="OqK-6S-KW4" firstAttribute="top" secondItem="ahj-YT-EMz" secondAttribute="bottom" constant="31" id="how-JZ-BAL"/>
+                            <constraint firstItem="HWf-Fd-H4O" firstAttribute="centerX" secondItem="BfV-Y6-pbn" secondAttribute="centerX" id="s4Q-JF-3A6"/>
+                            <constraint firstItem="AUE-Ay-5d3" firstAttribute="top" secondItem="ahj-YT-EMz" secondAttribute="bottom" constant="8" id="te5-IZ-aQc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="durationLabel" destination="Ce0-d1-fKw" id="L7L-ai-lz8"/>
+                        <outlet property="loadingView" destination="OqK-6S-KW4" id="8me-KO-hUF"/>
+                        <outlet property="localAudioPlayOrPauseButton" destination="BfV-Y6-pbn" id="mvz-W8-E1K"/>
+                        <outlet property="progressLabel" destination="AUE-Ay-5d3" id="vbO-op-Bxe"/>
+                        <outlet property="progressSlider" destination="ahj-YT-EMz" id="o4J-NU-ZNt"/>
+                        <outlet property="remoteAudioPlayOrPauseButton" destination="HWf-Fd-H4O" id="ThB-Hs-JJa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </scene>
     </scenes>
 </document>

@@ -225,7 +225,7 @@ public class AudioPlayer: NSObject, AudioPlayerProperty {
         }
     }
 
-    /// 由于 player item 中的loadedTimeRanges，总是只存储当前正在加载的时间段，因此自己用一个数组
+    /// 由于 player item 中的 loadedTimeRanges，总是只存储当前正在加载的时间段，因此自己用一个数组
     /// 将已经加载的时间段存储下来
     private var loadedTimeRanges: [CMTimeRange] = []
 
@@ -651,10 +651,13 @@ extension AudioPlayer {
             guard let `self` = self else {
                 return
             }
+            guard player.rate != 0 else {
+                return
+            }
             let progress = CMTimeGetSeconds(currentTime)
             self.delegate?.audioPlayer(self, progressDidChanged: progress)
             
-            if self.loadingState == .waitingPlay && self.canPlay(player: player) && player.rate != 0{
+            if self.loadingState == .waitingPlay && self.canPlay(player: player) {
                 self.state = .playing
             }
         }

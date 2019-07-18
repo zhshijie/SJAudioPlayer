@@ -13,6 +13,7 @@
 		A2F581A222E0957600866B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F581A122E0957600866B4C /* Assets.xcassets */; };
 		A2F581A522E0957600866B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F581A322E0957600866B4C /* LaunchScreen.storyboard */; };
 		A2F581AE22E0958F00866B4C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581AD22E0958F00866B4C /* AudioPlayer.swift */; };
+		A2F581B022E0C2E900866B4C /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F581AF22E0C2E900866B4C /* test.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2F581A422E0957600866B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2F581A622E0957600866B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F581AD22E0958F00866B4C /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		A2F581AF22E0C2E900866B4C /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		A2F5819922E0957500866B4C /* SJAudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A2F581B122E0C2ED00866B4C /* Resource */,
 				A2F581AC22E0957A00866B4C /* AudioPlayer */,
 				A2F5819A22E0957500866B4C /* AppDelegate.swift */,
 				A2F5819C22E0957500866B4C /* ViewController.swift */,
@@ -73,6 +76,14 @@
 				A2F581AD22E0958F00866B4C /* AudioPlayer.swift */,
 			);
 			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		A2F581B122E0C2ED00866B4C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A2F581AF22E0C2E900866B4C /* test.mp3 */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			files = (
 				A2F581A522E0957600866B4C /* LaunchScreen.storyboard in Resources */,
 				A2F581A222E0957600866B4C /* Assets.xcassets in Resources */,
+				A2F581B022E0C2E900866B4C /* test.mp3 in Resources */,
 				A2F581A022E0957500866B4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
