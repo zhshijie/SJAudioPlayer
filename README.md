@@ -14,6 +14,8 @@
 
 ### 使用方法
 
+##### 基础使用
+
 1. 创建 player
 
 ```swift
@@ -85,6 +87,20 @@ func audioPlayer(_ audioPlayer: AudioPlayer, loadedProgressDidChanged loadedProg
 ```
 
 
+#### 进阶设置
+
+1. 设置进度条的回调时间间隔
+
+```swift
+player.intervalOfProgressObserver = 2 // 默认是 1s
+```
+
+2. 设置音频播放在被打断后，是否自动恢复
+
+```swift
+player.isAutoPlayAfterInterruption = false // 默认值是 true
+```
+
 ### 后续功能优化
 
 1. 添加加载超时功能
@@ -92,7 +108,6 @@ func audioPlayer(_ audioPlayer: AudioPlayer, loadedProgressDidChanged loadedProg
 ### 状态转换图
 
 我们先抛开 `AVPlayer`，单纯的考虑一个音频播放器需要的状态，及各个状态之间的转换。我们需要先定义播发器的各个状态，和各个状态之间的转换动作。
-
 
 #### 状态（State）
 
