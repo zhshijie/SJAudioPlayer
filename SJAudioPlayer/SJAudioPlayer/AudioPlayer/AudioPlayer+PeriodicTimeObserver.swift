@@ -12,10 +12,13 @@ import AVFoundation
 extension AudioPlayer {
     
     func clearPeriodicTimeObserver() {
-        if _periodicTimeObserver != nil {
-            player?.removeTimeObserver(_periodicTimeObserver!)
-            _periodicTimeObserver = nil
+     
+        guard let periodicTimeObserver = _periodicTimeObserver else {
+            return
         }
+        player?.removeTimeObserver(periodicTimeObserver)
+        _periodicTimeObserver = nil
+
     }
     
     func updatePeriodicTimeObserver() {

@@ -114,7 +114,7 @@ public class AudioPlayer: NSObject, AudioPlayerProperty {
     
     var _periodicTimeObserver: Any?
     
-    /// 设置进度的回调时间，默认是 1 s 回调一次
+    /// 设置进度的回调时间，默认是 1s 回调一次
     public var intervalOfProgressObserver: Double = 1.0 {
         didSet {
             updatePeriodicTimeObserver()
@@ -156,6 +156,8 @@ public class AudioPlayer: NSObject, AudioPlayerProperty {
     }
     
     deinit {
+        clearSrc()
+        clearPeriodicTimeObserver()
         removePlayerItemKeyPathObserver()
         removePlayerKeyPathObserver()
         removeNotificationObserver()

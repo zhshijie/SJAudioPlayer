@@ -52,8 +52,9 @@ public protocol AudioPlayerProperty {
     
     var src: String? { set get }
     var state: AudioPlayerState { get }
-    var progress: Float64 { get }
+    
     var rate: Float { set get }
+    var progress: Float64 { get }
     var duration: Float64? { get }
     
     var intervalOfProgressObserver: Double { set get }
