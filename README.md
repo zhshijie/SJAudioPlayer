@@ -3,14 +3,13 @@
 
 ### 前言
 
-最近需要用到 `AVPlayer` 来进行音频的播放，但是 `AVPlayer` 各个版本的兼容问题，播放各个状态的转换异常混乱，所以就希望能够将 `AVPlayer` 进行封装。由于业务中对于音视频播放的需求很简单，并没有很复杂的操作，所以不考虑引入其他的第三方音频播放器。
+最近需要用到 `AVPlayer` 来进行音频的播放，但是 `AVPlayer` 各个版本的兼容问题，播放各个状态的转换异常混乱，所以就希望能够将 `AVPlayer` 进行封装。
 
 封装希望达到以下目标：
 
 1. 接口简单
 2. 状态转换明确
 3. 不需要考虑版本兼容问题
-
 
 
 ### 使用方法
@@ -54,13 +53,13 @@ self.audioPlayer.src = Bundle.main.path(forResource: "test", ofType: "mp3")
 ```swift
   func audioPlayer(_ audioPlayer: AudioPlayer, stateDidChanged state: AudioPlayerState) {
         switch state {
+        case .none:
+            break
         case .playing:
             break
         case .loading:
             break
         case .paused:
-            break
-        case .none:
             break
         case .ended:
             break
@@ -84,6 +83,11 @@ func audioPlayer(_ audioPlayer: AudioPlayer, loadedProgressDidChanged loadedProg
 
 }
 ```
+
+
+### 后续功能优化
+
+1. 添加加载超时功能
 
 ### 状态转换图
 
@@ -125,3 +129,5 @@ func audioPlayer(_ audioPlayer: AudioPlayer, loadedProgressDidChanged loadedProg
 所有的动作和状态之间的转换关系如下图
 
 ![播放器状态转换图](https://github.com/zhshijie/SJAudioPlayer/blob/master/image/playerState.png?raw=true)
+
+
