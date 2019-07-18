@@ -14,6 +14,15 @@
 		A2F581A522E0957600866B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F581A322E0957600866B4C /* LaunchScreen.storyboard */; };
 		A2F581AE22E0958F00866B4C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581AD22E0958F00866B4C /* AudioPlayer.swift */; };
 		A2F581B022E0C2E900866B4C /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F581AF22E0C2E900866B4C /* test.mp3 */; };
+		A2F581B322E0C81400866B4C /* AVPlayerItem+Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581B222E0C81400866B4C /* AVPlayerItem+Tool.swift */; };
+		A2F581B522E0C89800866B4C /* AudioPlayerURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581B422E0C89800866B4C /* AudioPlayerURLManager.swift */; };
+		A2F581B722E0CA9D00866B4C /* AudioPlayerLoadedTimeRangesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581B622E0CA9D00866B4C /* AudioPlayerLoadedTimeRangesManager.swift */; };
+		A2F581B922E0CAFF00866B4C /* AVPlayer+Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581B822E0CAFF00866B4C /* AVPlayer+Tool.swift */; };
+		A2F581BC22E0CD0500866B4C /* AudioPlayer+PeriodicTimeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581BB22E0CD0500866B4C /* AudioPlayer+PeriodicTimeObserver.swift */; };
+		A2F581BE22E0CE1500866B4C /* AudioPlayer+Src.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581BD22E0CE1500866B4C /* AudioPlayer+Src.swift */; };
+		A2F581C022E0CEBF00866B4C /* AudioPlayer+StateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581BF22E0CEBF00866B4C /* AudioPlayer+StateObserver.swift */; };
+		A2F581C222E0CF5300866B4C /* AudioPlayer+Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581C122E0CF5300866B4C /* AudioPlayer+Tool.swift */; };
+		A2F581C422E0CF8D00866B4C /* AudioPlayer+Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F581C322E0CF8D00866B4C /* AudioPlayer+Code.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		A2F581A622E0957600866B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F581AD22E0958F00866B4C /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		A2F581AF22E0C2E900866B4C /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		A2F581B222E0C81400866B4C /* AVPlayerItem+Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Tool.swift"; sourceTree = "<group>"; };
+		A2F581B422E0C89800866B4C /* AudioPlayerURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerURLManager.swift; sourceTree = "<group>"; };
+		A2F581B622E0CA9D00866B4C /* AudioPlayerLoadedTimeRangesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerLoadedTimeRangesManager.swift; sourceTree = "<group>"; };
+		A2F581B822E0CAFF00866B4C /* AVPlayer+Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Tool.swift"; sourceTree = "<group>"; };
+		A2F581BB22E0CD0500866B4C /* AudioPlayer+PeriodicTimeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioPlayer+PeriodicTimeObserver.swift"; sourceTree = "<group>"; };
+		A2F581BD22E0CE1500866B4C /* AudioPlayer+Src.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioPlayer+Src.swift"; sourceTree = "<group>"; };
+		A2F581BF22E0CEBF00866B4C /* AudioPlayer+StateObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioPlayer+StateObserver.swift"; sourceTree = "<group>"; };
+		A2F581C122E0CF5300866B4C /* AudioPlayer+Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioPlayer+Tool.swift"; sourceTree = "<group>"; };
+		A2F581C322E0CF8D00866B4C /* AudioPlayer+Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioPlayer+Code.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +91,13 @@
 		A2F581AC22E0957A00866B4C /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A2F581BA22E0CCCD00866B4C /* Tool */,
 				A2F581AD22E0958F00866B4C /* AudioPlayer.swift */,
+				A2F581C322E0CF8D00866B4C /* AudioPlayer+Code.swift */,
+				A2F581BD22E0CE1500866B4C /* AudioPlayer+Src.swift */,
+				A2F581BB22E0CD0500866B4C /* AudioPlayer+PeriodicTimeObserver.swift */,
+				A2F581BF22E0CEBF00866B4C /* AudioPlayer+StateObserver.swift */,
+				A2F581C122E0CF5300866B4C /* AudioPlayer+Tool.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
@@ -84,6 +108,17 @@
 				A2F581AF22E0C2E900866B4C /* test.mp3 */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A2F581BA22E0CCCD00866B4C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A2F581B422E0C89800866B4C /* AudioPlayerURLManager.swift */,
+				A2F581B622E0CA9D00866B4C /* AudioPlayerLoadedTimeRangesManager.swift */,
+				A2F581B222E0C81400866B4C /* AVPlayerItem+Tool.swift */,
+				A2F581B822E0CAFF00866B4C /* AVPlayer+Tool.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +194,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2F5819D22E0957500866B4C /* ViewController.swift in Sources */,
+				A2F581B722E0CA9D00866B4C /* AudioPlayerLoadedTimeRangesManager.swift in Sources */,
+				A2F581BC22E0CD0500866B4C /* AudioPlayer+PeriodicTimeObserver.swift in Sources */,
+				A2F581C022E0CEBF00866B4C /* AudioPlayer+StateObserver.swift in Sources */,
 				A2F5819B22E0957500866B4C /* AppDelegate.swift in Sources */,
+				A2F581B922E0CAFF00866B4C /* AVPlayer+Tool.swift in Sources */,
+				A2F581C422E0CF8D00866B4C /* AudioPlayer+Code.swift in Sources */,
+				A2F581BE22E0CE1500866B4C /* AudioPlayer+Src.swift in Sources */,
+				A2F581C222E0CF5300866B4C /* AudioPlayer+Tool.swift in Sources */,
+				A2F581B322E0C81400866B4C /* AVPlayerItem+Tool.swift in Sources */,
+				A2F581B522E0C89800866B4C /* AudioPlayerURLManager.swift in Sources */,
 				A2F581AE22E0958F00866B4C /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
