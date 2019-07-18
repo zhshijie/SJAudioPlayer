@@ -124,4 +124,4 @@ func audioPlayer(_ audioPlayer: AudioPlayer, loadedProgressDidChanged loadedProg
 
 所有的动作和状态之间的转换关系如下图
 
-![播放器状态转换图](./image/播放器状态转换图.png)
+![播放器状态转换图](https://github.com/zhshijie/SJAudioPlayer/blob/master/image/playerState.png?raw=true)
