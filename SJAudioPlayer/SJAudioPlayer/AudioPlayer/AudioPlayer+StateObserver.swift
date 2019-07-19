@@ -16,7 +16,6 @@ extension AudioPlayer {
     static let playerRateKeyPath = #keyPath(AVPlayer.rate)
     static let playerStatusKeyPath = #keyPath(AVPlayer.status)
     static let playerTimeControlStatusKeyPath = #keyPath(AVPlayer.timeControlStatus)
-    static let playerReasonForWaitingToPlayKeyPath = #keyPath(AVPlayer.reasonForWaitingToPlay)
     
     static let playerItemStatusKeyPath = #keyPath(AVPlayer.currentItem.status)
     static let playerLoadedTimeRangesKeyPath = #keyPath(AVPlayer.currentItem.loadedTimeRanges)
@@ -52,8 +51,9 @@ extension AudioPlayer {
         }
         player.addObserver(self, forKeyPath: AudioPlayer.playerStatusKeyPath, options: [.new], context: nil)
         player.addObserver(self, forKeyPath: AudioPlayer.playerRateKeyPath, options: .new, context: nil)
-        player.addObserver(self, forKeyPath: AudioPlayer.playerReasonForWaitingToPlayKeyPath, options: .new, context: nil)
-        player.addObserver(self, forKeyPath: AudioPlayer.playerTimeControlStatusKeyPath, options: .new, context: nil)
+        if #available(iOS 10, *) {
+            player.addObserver(self, forKeyPath: AudioPlayer.playerTimeControlStatusKeyPath, options: .new, context: nil)
+        }
         
     }
     
@@ -64,8 +64,9 @@ extension AudioPlayer {
         }
         player.removeObserver(self, forKeyPath: AudioPlayer.playerStatusKeyPath)
         player.removeObserver(self, forKeyPath: AudioPlayer.playerRateKeyPath)
-        player.removeObserver(self, forKeyPath: AudioPlayer.playerReasonForWaitingToPlayKeyPath)
-        player.removeObserver(self, forKeyPath: AudioPlayer.playerTimeControlStatusKeyPath)
+        if #available(iOS 10, *) {
+            player.removeObserver(self, forKeyPath: AudioPlayer.playerTimeControlStatusKeyPath)
+        }
         
     }
     
@@ -136,6 +137,7 @@ extension AudioPlayer {
         
         switch interruptionType {
         case .began:
+            pause()
             break
         case .ended:
             
@@ -144,10 +146,7 @@ extension AudioPlayer {
             }
             let interruptionOption = AVAudioSession.InterruptionOptions(rawValue: interruptionOptionRawValue)
             if isAutoPlayAfterInterruption && interruptionOption == .shouldResume {
-                guard let player = self.player else {
-                    return
-                }
-                player.rate = self.rate
+                play()
             }
             break
             
@@ -250,6 +249,9 @@ extension AudioPlayer {
         }
     }
     
+    
+    /// 由于 AVPlayer 的 loadedTimeRanges 总是只存储一个数值，因此自己将 loadedTimeRanges 的值保存到一个数组中
+    /// 方便后续用于检查指定进度的数据是否已经加载
     func handlePlayerLoadedTimeRangesObserver(change: [NSKeyValueChangeKey : Any]?) {
         guard let ranges = player?.currentItem?.loadedTimeRanges as? [CMTimeRange] else {
             return
