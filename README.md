@@ -26,7 +26,7 @@ player.delegate = self
 2. 设置播放源
 ```swift
 // 远程视频
-self.audioPlayer.src = "https://store-g1.seewo.com/picbook/test.mp3"
+self.audioPlayer.src = "https://xxxxk/test.mp3"
 
 // 本地视频
 self.audioPlayer.src = Bundle.main.path(forResource: "test", ofType: "mp3")
